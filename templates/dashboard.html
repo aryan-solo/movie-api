@@ -1,0 +1,34 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+  <h1>Dashboard <small> Welcome {{session.username}}</small></h1>
+  <a class="btn btn-success" href="/admin/add_movie"> Add Movie</a>
+  <hr>
+  <table class="table table-striped">
+    <tr>
+      <th>Id</th>
+      <th>name</th>
+      <th>director</th>
+      <th>imdb_score</th>
+      <th>genre</th>
+      <th>popularity</th>
+    </tr>
+    {% for movie in result %}
+      <tr>
+        <td>{{movie.id}}</td>
+        <td>{{movie.name}}</td>
+        <td>{{movie.director}}</td>
+        <td>{{movie.imdb_score}}</td>
+        <td>{{movie.genre}}</td>
+        <td>{{movie.popularity}}</td>
+        <td><a href="edit_movie/{{movie.name}}" class="btn btn-default pull-right">Edit</a></td>
+        <td>
+          <form action="{{url_for('delete_movie', name=movie.name)}}" method="post">
+            <input type="hidden" name="_method" value="DELETE">
+            <input type="submit" value="Delete" class="btn btn-danger">
+          </form>
+        </td>
+      </tr>
+    {% endfor %}
+  </table>
+{% endblock %}

@@ -1,0 +1,44 @@
+{% extends 'layout_user.html' %}
+
+{% block body %}
+  <h1>Home <small> Welcome </small></h1>
+  <div align="right">
+  <form action="" method="POST">
+    <div class="form-group">
+      <label>search-movie</label>
+      <input type="text" name="name" value={{request.form.name}}>
+      <button type="submit" class="btn btn-primary">Search</button>
+    </div> 
+  </form>
+</div>
+  <div align="right">
+  <form action="" method="POST">
+    <div class="form-group">
+      <label>search-genre</label>
+      <input type="text" name="genre" value={{request.form.name}}>
+      <button type="submit" class="btn btn-primary">Search</button>
+    </div>
+  </form>
+</div>
+  <hr>
+  <table class="table table-striped">
+    <tr>
+      <th>Id</th>
+      <th>name</th>
+      <th>director</th>
+      <th>imdb_score</th>
+      <th>genre</th>
+      <th>popularity</th>
+    </tr>
+    {% for movie in result %}
+      <tr>
+        <td>{{movie.id}}</td>
+        <td>{{movie.name}}</td>
+        <td>{{movie.director}}</td>
+        <td>{{movie.imdb_score}}</td>
+        <td>{{movie.genre}}</td>
+        <td>{{movie.popularity}}</td>
+      </tr>
+    {% endfor %}
+  </table>
+{% endblock %}

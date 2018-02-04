@@ -1,0 +1,24 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+  <h1>Add Movie</h1>
+  {% from "includes/_formhelpers.html" import render_field %}
+  <form method="POST" action="">
+    <div class="form-group">
+      {{ render_field(form.name, class_="form-control") }}
+    </div>
+    <div class="form-group">
+      {{ render_field(form.director, class_="form-control") }}
+    </div>
+    <div class="form-group">
+      {{ render_field(form.imdb_score, class_="form-control") }}
+    </div>
+    <div class="form-group">
+      {{ render_field(form.popularity, class_="form-control") }}
+    </div>
+    <div class="form-group">
+      {{ render_field(form.genre, class_="form-control") }}
+    </div>
+    <p><input class="btn btn-primary" type="submit" value="Submit">
+  </form>
+{% endblock %}

@@ -1,0 +1,32 @@
+{% extends 'layout_user.html' %}
+
+{% block body %}
+  <h1>Home <small> Welcome </small></h1>
+  <form action="" method="POST">
+    <div class="form-group">
+      <label>search-movie</label>
+      <input type="text" name="name" value={{request.form.name}}>
+      <button type="submit" class="btn btn-primary">Search</button>
+    </div>
+    
+  </form>
+  <hr>
+  <table class="table table-striped">
+    <tr>
+      <th>name</th>
+      <th>director</th>
+      <th>imdb_score</th>
+      <th>genre</th>
+      <th>popularity</th>
+    </tr>
+  
+    <tr>
+      <td>{{name}}</td>
+      <td>{{director}}</td>
+      <td>{{imdb_score}}</td>
+      <td>{{genre}}</td>
+      <td>{{popularity}}</td>
+    </tr>
+   
+  </table>
+{% endblock %}
