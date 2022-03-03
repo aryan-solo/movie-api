@@ -13,8 +13,8 @@ app = Flask(__name__)
 # Config MySQL
 app.config['MYSQL_HOST'] = 'aryan-rds-movie-task.ca7x3oxpwgii.us-east-1.rds.amazonaws.com'
 app.config['MYSQL_USER'] = 'aryan'
-app.config['MYSQL_PASSWORD'] = 'qwerty95'
-app.config['MYSQL_DB'] = 'aryanDb'
+app.config['MYSQL_PASSWORD'] = 'hkfdjhkhdfkg'
+app.config['MYSQL_DB'] = 'fffff'
 app.config['MYSQL_CURSORCLASS'] = 'DictCursor'
 # init MYSQL
 mysql = MySQL(app)
